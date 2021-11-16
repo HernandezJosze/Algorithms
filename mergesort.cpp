@@ -7,7 +7,7 @@ void auxMergesort(T *ini, T *mid, T *fin){
    int i = 0;
    T *part1 = ini, *part2 = mid;
    while(part1 < mid && part2 < fin){
-      if(*part1 <= *part2){
+      if(*part1 < *part2){ // comparator 
          temp[i] = *part1;
          ++i, part1++;
       }else{
@@ -43,10 +43,9 @@ void mergesort(T beg,T end){
    mergesort(&*beg, &*end);
    return;
 }
-
 int main( ){
    char arr[] = {33, 35, 34};
-   std::vector<double> v = {1, 4, 2};
+   std::vector<double> v = {1, 4, 2, 2, 4, 1, 0};
 
    mergesort(std::begin(arr), std::end(arr));
    for(const auto& el : arr){
