@@ -39,7 +39,6 @@ class sqrtTree{
             return *funcion(&result[0], &result[0] + result.size( ));
         }
         void update(int index, T val){             // index to update, new value
-            std::vector<T> act = {memory[index], val};
             memory[index] = val;
             int ini = (index / segments) * segments;
             int fin = ((index / segments) + 1) * segments;
@@ -49,7 +48,7 @@ class sqrtTree{
 
 int main( ){
     int n;
-	std::cin >> n;
+    std::cin >> n;
     std::vector<int> v(n);
 	for(auto& el : v){
         std::cin >> el;
